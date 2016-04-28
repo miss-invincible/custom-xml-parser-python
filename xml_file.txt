@@ -1,20 +1,16 @@
 <note>
-  <to>
-    Tove
+  <to>Tove
   </to>
-  <from>
-    Jani
+  <from>Jani
   </from>
   <heading>
     <subpart>
-      <interior>
-        innner
+      <interior>innner
       </interior>
     </subpart>
   </heading>
   <body>
-    <deeper>
-      Don't forget me this weekend!
+    <deeper>Don't forget me this weekend!
     </deeper>  
   </body>
 </note>
