@@ -1,5 +1,7 @@
-xml_string = "<note><to>Tove</to><from>Jani</from><heading><test><deep>Reminder</deep></test></heading><body>Don't forget me this weekend!</body></note>"
-
+#xml_string = "<breakfast_menu><food><name>Belgian Waffles</name><price>$5.95</price><description>Our famous Belgian Waffles with plenty of real maple syrup</description><calories>650</calories></food><food><name>French Toast</name><price>$4.50</price><description>Thick slices made from our homemade sourdough bread</description><calories>600</calories></food><food><name>Homestyle Breakfast</name><price>$6.95</price><description>Two eggs, bacon or sausage, toast, and our ever-popular hash browns</description><calories>950</calories></food></breakfast_menu>"
+xml_file = open("my_xml.txt","r+")
+xml_string = xml_file.read();
+xml_file.close()
 cur_pos = 0;
 level=0
 
