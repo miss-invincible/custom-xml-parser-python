@@ -1,3 +1,5 @@
+from Tkinter import *
+
 #xml_string = "<breakfast_menu><food><name>Belgian Waffles</name><price>$5.95</price><description>Our famous Belgian Waffles with plenty of real maple syrup</description><calories>650</calories></food><food><name>French Toast</name><price>$4.50</price><description>Thick slices made from our homemade sourdough bread</description><calories>600</calories></food><food><name>Homestyle Breakfast</name><price>$6.95</price><description>Two eggs, bacon or sausage, toast, and our ever-popular hash browns</description><calories>950</calories></food></breakfast_menu>"
 xml_file = open("my_xml.txt","r+")
 xml_string = xml_file.read();
@@ -14,17 +16,22 @@ class node(object):
     def res(self,level=0):
     	
     	count = 1
-    	
+    	global text
     	for val in self.children:
     		strg = ""
     		if not val == None:
     			for i in range(0,level):
     				strg = strg+"	"
+    			line = ""
+    			line = strg+"parent = "+self.value+"\n"
+    			text.insert(INSERT, line)
+    			line = strg+"child number= "+str(count)+"\n"
+    			text.insert(INSERT, line)
+    			line = strg+"child name= "+str(val.value)+"\n"
+    			text.insert(INSERT, line)
+    			line = "\n"
+    			text.insert(INSERT, line)
 
-    			print strg,"parent = ",self.value
-    			print strg,"child number= ",count
-    			print strg,"child name=", val.value
-    			print "\n"
     			count+=1;
     		
     		val.res(level+1)
@@ -136,8 +143,23 @@ def xml_parser(name):
 		
 
 
+
+
+
+def onclick():
+   pass
+
+
+
 a = xml_parser("root")
+root = Tk()
+text = Text(root,width=200,height=60)
 a.res()
+text.insert(END, "Parsing complete")
+text.pack()
+root.mainloop()
+
+
 
 
 
